@@ -6,7 +6,10 @@
    ```powershell
    get-service | export-csv servicios.csv | out-file
    ```
-   Por qué?
+   Sale el error: 
+   ```out-file : Cannot process argument because the value of argument "path" is null. Change the value of argument "path" to a non-null value.```
+   Por qué? Porque ``out-file`` necesita especificar el parámetro "path", que es el archivo al cual se le va a enviar la salida.  
+   
 3. Cómo haría para crear un archivo delimitado por puntos y comas (;)?
    PISTA: Se emplea ``export-csv``, pero con un parámetro adicional.
 4. ``Export-cliXML`` y ``Export-CSV`` modifican el sistema, porque pueden crear
