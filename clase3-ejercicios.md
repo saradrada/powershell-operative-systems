@@ -61,6 +61,9 @@
    listas. En Windows en inglés, el separador de listas es la coma (,).
    Cómo se le dice a ``Export-CSV`` que emplee el separador del sistema en lugar
    de la coma?
+   ```powershell
+   Set-WinUserLanguageList -LanguageList (New-WinUserLanguageList -Language en-GB) -Force
+   ``` 
 6. Identifique un cmdlet que permita generar un número aleatorio.
    ```powershell
    Get-Random
@@ -116,3 +119,6 @@
     las entradas producidas al mismo tiempo deben ordenarse por número índice.
     Muestre el número índice, la hora y la fuente para cada entrada. Escriba
     esta información en un archivo de texto plano.
+    ```powershell
+    Get-EventLog -LogName system -Newest 50| Sort-Object -Property TimeWritten,Index | Select-Object -Property Index, TimeWritten,   Source
+    ```
