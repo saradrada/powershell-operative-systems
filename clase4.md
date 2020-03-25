@@ -58,7 +58,7 @@ Windows PowerShell                  0
    servicios que están iniciados y los que están detenidos. Los que están
    iniciados deben aparecer primero.
 ```Powershell   
-Get-Service | sort Status | fl -GroupBy status
+Get-Service | sort Status -Descending | fl -GroupBy status
 ```
 
 5. Mostrar una lista a cuatro columnas de todos los directorios que están en
